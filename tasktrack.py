@@ -16,11 +16,15 @@ def display_menu():
 
 def add_task(tasks):
     """Prompt the user for a task and add it to the task list."""
-    task = input("Enter a new task: ")
+    task = input("Enter a new task: ").strip()
+
+    if not task:
+        print("A task cannot be empty.")
+        return
+
     tasks.append(task)
     print("Task added successfully.")
     
-
 
 def view_tasks(tasks):
     """Display all tasks currently stored in the task list."""
@@ -32,6 +36,7 @@ def view_tasks(tasks):
 
     for number, task in enumerate(tasks,start=1):
         print(f"{number}. {task}")
+
 
 def load_tasks(filename):
     """Load tasks from a text file and return them as a list."""
@@ -50,11 +55,13 @@ def load_tasks(filename):
 
     return tasks
 
+
 def save_tasks(tasks, filename):
     """Save all tasks to a text file."""
     with open(filename, "w") as file:
         for task in tasks:
             file.write(f"{task}\n")
+
 
 def main():
     """Run the TaskTrack menu until the user chooses to exit."""
@@ -74,6 +81,7 @@ def main():
             break
         else:
             print("Please enter 1, 2, or 3.")
+
 
 if __name__ == "__main__":
     main()
