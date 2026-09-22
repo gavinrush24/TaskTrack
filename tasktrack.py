@@ -33,25 +33,6 @@ def view_tasks(tasks):
     for number, task in enumerate(tasks,start=1):
         print(f"{number}. {task}")
 
-
-def main():
-    """Run the TaskTrack menu until the user chooses to exit."""
-    tasks = load_tasks(TASKS_FILE)
-
-    while True:
-        display_menu()
-        choice = input("Choose an option: ")
-
-        if choice == "1":
-            view_tasks(tasks)
-        elif choice == "2":
-            add_task(tasks)
-        elif choice == "3":
-            print("Goodbye!")
-            break
-        else:
-            print("Please enter 1, 2, or 3.")
-
 def load_tasks(filename):
     """Load tasks from a text file and return them as a list."""
     tasks = []
@@ -68,6 +49,31 @@ def load_tasks(filename):
         return []
 
     return tasks
+
+def save_tasks(tasks, filename):
+    """Save all tasks to a text file."""
+    with open(filename, "w") as file:
+        for task in tasks:
+            file.write(f"{task}\n")
+
+def main():
+    """Run the TaskTrack menu until the user chooses to exit."""
+    tasks = load_tasks(TASKS_FILE)
+
+    while True:
+        display_menu()
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            view_tasks(tasks)
+        elif choice == "2":
+            add_task(tasks)
+            save_tasks(tasks, TASKS_FILE)
+        elif choice == "3":
+            print("Goodbye!")
+            break
+        else:
+            print("Please enter 1, 2, or 3.")
 
 if __name__ == "__main__":
     main()
