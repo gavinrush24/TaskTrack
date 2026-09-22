@@ -58,3 +58,7 @@ Tasks:
 ## Current Limitation
 
 Cannot remove a task when completed 
+
+## Version Control
+
+This project uses Git as its local version control and GitHub as an online repository. To change something locally use 'commit' and when you want to update the online repo use 'push'. When downloading something from the repo use 'pull'
