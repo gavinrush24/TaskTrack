@@ -8,6 +8,7 @@ TaskTrack is a command-line task manager created for CPS 310.
 - add tasks to a to-do list 
 - display tasks that you have added to the list
 - Save tasks to a seperate file so they don't dissapear when the program closes
+- remove tasks from the to-dolist
 
 ## Requirements
 
@@ -40,7 +41,8 @@ python tasktrack.py
 TaskTrack - Task Manager
 1. View tasks
 2. Add task
-3. Exit
+3. Remove task
+4. Exit
 Enter choice: 2
 Enter a new task: Complete ICA04 assignment
 Task added successfully.
@@ -48,7 +50,8 @@ Task added successfully.
 TaskTrack - Task Manager
 1. View tasks
 2. Add task
-3. Exit
+3. Remove task
+4. Exit
 Enter choice: 1
 
 Tasks:
@@ -57,7 +60,7 @@ Tasks:
 
 ## Current Limitation
 
-Cannot remove a task when completed 
+
 
 ## Version Control
 
