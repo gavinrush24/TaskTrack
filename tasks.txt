@@ -1,6 +1,3 @@
-Complete ICA04
-Review GitHub commands
-Update the TaskTrack README
-Test persistent storage
-finish math homework
-Do homework
+Do ICA05
+Swutch laundry
+Go to store
