@@ -82,16 +82,24 @@ def remove_task(tasks):
 
     task_number = int(selection)
 
-    if task_number < 1 or task_number > len(tasks):
-        print("Please enter a valid task number.")
-        return False
-
-    removed_task = tasks.pop(task_number - 1)
+    removed_task = remove_task_by_number(tasks, task_number)
 
     print(f"'{removed_task}' has been removed.")
 
     return True
 
+
+def remove_task_by_number(tasks, task_number):
+    """Remove a task by its displayed number and return the removed task.
+
+    Return None when the task number is outside the valid range.
+    """
+
+    if task_number < 1 or task_number > len(tasks):
+        print("Please enter a valid task number.")
+        return False
+
+    return tasks.pop(task_number - 1)    
 
 def main():
     """Run the TaskTrack menu until the user chooses to exit."""
